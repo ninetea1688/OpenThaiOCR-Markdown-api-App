@@ -1,0 +1,9 @@
+[project]
+name = "ocr-markdown-api"
+version = "0.2.0"
+description = "Local HTTP API: Thai document pages to Markdown with iapp/OpenThai2.1-OCR-Markdown-20261118"
+requires-python = ">=3.10"
+license = "MIT"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+# Linux NVIDIA host with NVIDIA Container Toolkit.
+# docker compose -f compose.yaml -f compose.gpu.yaml up -d --build
+services:
+  ocr:
+    build:
+      args:
+        TORCH_INDEX_URL: https://download.pytorch.org/whl/cu130
+    environment:
+      OCR_DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
